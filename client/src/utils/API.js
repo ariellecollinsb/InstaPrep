@@ -29,7 +29,7 @@ export default {
     });
   },
   loginLocal: function (credentials) {
-    return axios.get(`${API_URL}/local?username=${credentials.username}&password=${credentials.password}`, credentials, {
+    return axios.get(`${API_URL}/auth/local?username=${credentials.username}&password=${credentials.password}`, credentials, {
       withCredentials: true
     });
   },
@@ -45,7 +45,7 @@ export default {
   },
   //-----------------------------------------------------------------------------------------------------------------------//    
   getSession: function () {
-    return axios.get(`${API_URL}/session/`, {
+    return axios.get(`${API_URL}/auth/session/`, {
       withCredentials: true
     });
   },

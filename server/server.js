@@ -35,7 +35,14 @@ passportInit(app)
 
 app.use("/api", require("./routes/api/apiRoutes"));
 app.get('/wake-up', (req, res) => res.send('👍'))
-app.use('/', authRouter)
+app.use('/auth', authRouter);
+app.get('/*', function(req, res){
+  res.sendFile(join(__dirname, '../client/build/index.html'), function(err) {
+    if(err) {
+      res.status(500).send(err);
+    }
+  })
+})
 
 mongoose.connect(dbConfig, { useNewUrlParser: true });
 
