@@ -40,7 +40,7 @@ class LogoutPage extends React.Component {
                   <h3 className="title mx-auto">Log Out</h3>
                   <h5 className=" mx-auto">You have now logged out </h5>
 
-                  <Button block className="btn-round mt-3" color="danger">
+                  <Button block className="btn-round mt-3" color="danger" href="/">
                     Return
                   </Button>
                 </Card>
