@@ -17,7 +17,6 @@ module.exports = {
   },
   // create a new user/ sign up function
   create: function(req, res) {
-    console.log(req.body);
     User
       .create(req.body)
       .then(dbModel => {
@@ -28,16 +27,16 @@ module.exports = {
             ...dbModel.toObject(),
             registered: true
           }
-          console.log(userData);
           req.session.passport.user = userData;
+          res.json(userData)
         } else {
           const userData = {
             ...dbModel.toObject(),
             registered: true
           }
           req.session.passport.user = userData;
+          res.json(userData);
         }
-        console.log("Done");
       })
       .catch(err => {
         console.log(err);
