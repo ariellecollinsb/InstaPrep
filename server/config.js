@@ -2,7 +2,7 @@ const providers = ['google', 'github']
 
 const callbacks = providers.map(provider => {
   return process.env.NODE_ENV === 'production'
-    ? `http://localhost:3001/${provider}/callback`
+    ? `/${provider}/callback`
     : `http://localhost:3001/${provider}/callback`
 })
 
@@ -14,7 +14,7 @@ exports.dbConfig = process.env.NODE_ENV === 'production' ?
   'mongodb://localhost:27017/InstaPrep'
 
 exports.CLIENT_ORIGIN = process.env.NODE_ENV === 'production'
-  ? 'http://localhost:3001'
+  ? '/'
   : ['http://127.0.0.1:3000', 'http://localhost:3000']
 
 // exports.TWITTER_CONFIG = {
