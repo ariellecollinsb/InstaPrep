@@ -30,7 +30,10 @@ function HomePage() {
               <Col className="ml-auto mr-auto" md="8">
                 <h2 className="title">What is InstaPrep?</h2>
                 <h5 className="description">
-                  This is a description of the website.  Write a quick description about what the website provides to its users as well as the benfits of using it.  This should take up a few lines
+                  Are you a foodie, who enjoys spending time in the kitchen, cooking for your family and friends? 
+                  Do you live a hectic lifestyle that restricts your culinary exploits to the weekends- mainly Sundays? 
+                  Are you ready to discover creative meal concepts and a way to have you eating healthy and happy all week long?
+                  If your answer is yes to those, InstaPrep is an app that can make it happen!
                 </h5>
               </Col>
             </Row>
