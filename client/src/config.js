@@ -1,1 +1,1 @@
-export const API_URL = hero === 'production' ? "/" + process.env.PORT : "http://localhost:3001"
+export const API_URL = hero === 'production' ? "/" : "http://localhost:3001"
