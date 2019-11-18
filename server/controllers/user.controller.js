@@ -21,12 +21,14 @@ module.exports = {
     User
       .create(req.body)
       .then(dbModel => {
+        console.log("User Created");
         if (req.session.passport) {
           const userData = {
             ...req.session.passport.user,
             ...dbModel.toObject(),
             registered: true
           }
+          console.log(userData);
           req.session.passport.user = userData;
         } else {
           const userData = {
@@ -35,6 +37,7 @@ module.exports = {
           }
           req.session.passport.user = userData;
         }
+        console.log("Done");
       })
       .catch(err => {
         console.log(err);

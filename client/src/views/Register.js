@@ -122,10 +122,11 @@ class RegisterPage extends React.Component {
           ...this.context.user,
           ...response.data
         }
+        console.log(data);
         this.context.setUser(data);
         this.setState({
           registered: true
-        });
+        }, () => console.log(this.state));
       })
       .catch(error => {
         alert("Error saving user.");
