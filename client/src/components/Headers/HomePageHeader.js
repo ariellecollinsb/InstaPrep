@@ -21,30 +21,30 @@ function HomePageHeader() {
   let image = Math.ceil(Math.random() * 6).toString();
 
   return (
-      <>
-        <div
-          style={{
-            backgroundImage: "url(" + require(`../../assets/img/header-bgs/${image}.jpg`) + ")"
+    <>
+      <div
+        style={{
+          backgroundImage: "url(" + require(`../../assets/img/header-bgs/${image}.jpg`) + ")"
 
-          }}
-          className="page-header"
-          data-parallax={true}
-          ref={pageHeader}
-        >
-          <div className="filter" />
-          <Container>
-            <div className="motto text-center">
-              <h1>InstaPrep</h1>
-              <h3>Plan your week. </h3>
-              <br />
-              <Button className="btn-round" color="success" type="button" outline>
-                Get Started
-              </Button> 
-            </div>
-          </Container>
-        </div>
-      </>
-    );
+        }}
+        className="page-header"
+        data-parallax={true}
+        ref={pageHeader}
+      >
+        <div className="filter" />
+        <Container>
+          <div className="motto text-center">
+            <h1>InstaPrep</h1>
+            <h3>Plan your week. </h3>
+            <br />
+            <Button onClick={() => window.location.href = "/login"} className="btn-round" color="success" type="button" outline>
+              Get Started
+            </Button>
+          </div>
+        </Container>
+      </div>
+    </>
+  );
 }
 
 export default HomePageHeader;

@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const recipeSchema = new Schema({
   name: { type: String, required: true },
+  url: {type: String, required: true, unique: true},
   ingredients: { type: String, required: true },
   method: {type: String, required: true},
   isFavourite: Boolean, 

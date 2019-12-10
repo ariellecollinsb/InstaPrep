@@ -1,6 +1,7 @@
 import axios from "axios";
 import { API_URL } from "../config";
 
+
 export default {
 
   getRandomRecipe: function () {
@@ -13,6 +14,17 @@ export default {
     return axios.get(`${API_URL}/api/recipes/byDish/${query}`, {
       withCredentials: true
     });
+  },
+
+  addMeal: function (meal) {
+    console.log(meal)
+    // return axios.post(`${API_URL}/api/users/`, undefined, {
+    //   withCredentials: true
+    // });
+  },
+
+  getIngredients: function (id) {
+return axios.get(`${API_URL}/api/users/mealplans/ingredients`)
   },
 
   //-----------------------------------------------------------------------------------------------------------------------//    
@@ -38,11 +50,7 @@ export default {
       withCredentials: true
     });
   },
-  addMeal: function () {
-    return axios.post(`${API_URL}/api/users/`, undefined, {
-      withCredentials: true
-    });
-  },
+
   //-----------------------------------------------------------------------------------------------------------------------//    
   getSession: function () {
     return axios.get(`${API_URL}/auth/session/`, {

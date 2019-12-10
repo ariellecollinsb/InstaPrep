@@ -8,10 +8,14 @@ var BlogSchema = new Schema({
     required: true
   },
 
-  link: {
+  url: {
     type: String,
     required: true
   },
+
+  blurb: {
+    type: String
+  }
 
 });
 
