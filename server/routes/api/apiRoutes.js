@@ -7,6 +7,7 @@ const UserController = require("../../controllers/user.controller");
 router.post("/users/logout", UserController.logout);
 router.post("/users/mealPlan/", UserController.addMeal);
 router.get("/users/mealPlan/:week", UserController.getMeals);
+router.get("/users/shoppinglist/:week", UserController.getShoppingList)
 router.post("/users/", UserController.create);
 
 

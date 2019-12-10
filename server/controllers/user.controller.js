@@ -71,6 +71,14 @@ module.exports = {
       })
       .catch(error => res.json({ status: "error", error: error }));
   },
+  getShoppingList: function (req, res) {
+    let week = moment(req.params.week).toDate();
+    User.findById(req.session.passport.user._id)
+      .then(user => {
+        res.json(user.getShoppingList(week))
+      })
+      .catch(error => res.json({ status: "error", error: error }));
+  },
   // remove a user/ delete profile function
   remove: function (req, res) {
     User

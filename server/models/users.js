@@ -84,14 +84,33 @@ UserSchema.methods = {
     return ~oAuthTypes.indexOf(this.provider);
   },
   getMeals: function (week) {
+    var weekIndex = this.mealPlans.findIndex((v) => {
+      return new Date(v.week).getTime() === week.getTime();
+    });
+    if (weekIndex > -1) {
+      return this.mealPlans[weekIndex];
+    }
+    return [];
+  },
+  getShoppingList: function (week) {
     console.log(week);
-    console.log(week.getTime());
     var weekIndex = this.mealPlans.findIndex((v) => {
       return new Date(v.week).getTime() === week.getTime();
     });
     console.log(weekIndex);
     if (weekIndex > -1) {
-      return this.mealPlans[weekIndex];
+      let shoppingList = [];
+      this.mealPlans[weekIndex].days.forEach(day => {
+        day.meals.forEach(meal => {
+          let ingredients = meal.ingredients.split(",");
+          ingredients.forEach(ingredient => {
+            if (shoppingList.indexOf(ingredient.trim()) === -1) {
+              shoppingList.push(ingredient.trim());
+            }
+          })
+        });
+      });
+      return shoppingList;
     }
     return [];
   },

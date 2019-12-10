@@ -10,7 +10,7 @@ function Footer() {
             <ul>
               <li>
                 <a
-                  href="https://github.com/ariellecollinsb"
+                  href="https://github.com/ariellecollinsb/InstaPrep"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

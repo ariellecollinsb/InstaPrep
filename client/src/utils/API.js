@@ -28,6 +28,12 @@ export default {
     });
   },
 
+  getShoppingList: function (week) {
+    return axios.get(`${API_URL}/api/users/shoppingList/${moment(week).format("YYYY-MM-DD")}`, {
+      withCredentials: true
+    });
+  },
+
   getIngredients: function (id) {
     return axios.get(`${API_URL}/api/users/mealplans/ingredients`)
   },

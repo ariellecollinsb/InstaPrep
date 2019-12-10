@@ -13,6 +13,7 @@ import LoginPage from "./views/Login.js";
 import RegisterPage from "./views/Register.js";
 import MealsPage from "./views/Meals.js";
 import LogoutPage from "./views/Logout.js";
+import ShoppingListPage from "./views/ShoppingList.js";
 
 //Components
 import { UserProvider } from './UserContext';
@@ -66,6 +67,10 @@ export default class App extends Component {
             <Route
               path="/discover"
               render={props => <DiscoverPage {...props} />}
+            />
+            <Route
+              path="/shoppinglist"
+              render={props => <ShoppingListPage {...props} />}
             />
             <Route
               path="/login"

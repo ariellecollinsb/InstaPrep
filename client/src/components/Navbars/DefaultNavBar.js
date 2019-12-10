@@ -109,6 +109,11 @@ function DefaultNavBar() {
               </NavLink>
                 </NavItem>
                 <NavItem>
+                  <NavLink className="nav-link" to="/shoppinglist">
+                    Shopping List
+                </NavLink>
+                </NavItem>
+                <NavItem>
                   <NavLink className="nav-link" to="/profile">
                     Profile
                 </NavLink>
