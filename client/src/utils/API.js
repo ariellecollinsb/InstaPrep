@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_URL } from "../config";
-
+import moment from 'moment';
 
 export default {
 
@@ -17,14 +17,19 @@ export default {
   },
 
   addMeal: function (meal) {
-    console.log(meal)
-    // return axios.post(`${API_URL}/api/users/`, undefined, {
-    //   withCredentials: true
-    // });
+    return axios.post(`${API_URL}/api/users/mealPlan/`, meal, {
+      withCredentials: true
+    });
+  },
+
+  getMeals: function (week) {
+    return axios.get(`${API_URL}/api/users/mealPlan/${moment(week).format("YYYY-MM-DD")}`, {
+      withCredentials: true
+    });
   },
 
   getIngredients: function (id) {
-return axios.get(`${API_URL}/api/users/mealplans/ingredients`)
+    return axios.get(`${API_URL}/api/users/mealplans/ingredients`)
   },
 
   //-----------------------------------------------------------------------------------------------------------------------//    

@@ -5,7 +5,8 @@ const UserController = require("../../controllers/user.controller");
 // Users
 //
 router.post("/users/logout", UserController.logout);
-router.post("/users/mealPlan/:week/:day/:meal", UserController.mealPlan);
+router.post("/users/mealPlan/", UserController.addMeal);
+router.get("/users/mealPlan/:week", UserController.getMeals);
 router.post("/users/", UserController.create);
 
 
@@ -13,30 +14,30 @@ router.post("/users/", UserController.create);
 // Recipes
 //
 router.get("/recipes/byIngredient/:search/:page?", (req, res) => {
-    var page = "";
-    if(req.params.page) {
-        page = "&p=" + req.params.page
-    }
+  var page = "";
+  if (req.params.page) {
+    page = "&p=" + req.params.page
+  }
 
-    axios
-      .get("http://www.recipepuppy.com/api/?i=" + req.params.search + page)
-      .then(({ data: { results } }) => res.json(results))
-      .catch(err => res.status(404).json([]))
-      .catch(err => res.status(422).json(err));
-  });
+  axios
+    .get("http://www.recipepuppy.com/api/?i=" + req.params.search + page)
+    .then(({ data: { results } }) => res.json(results))
+    .catch(err => res.status(404).json([]))
+    .catch(err => res.status(422).json(err));
+});
 
 router.get("/recipes/byDish/:search/:page?", (req, res) => {
-    var page = "";
-    if(req.params.page) {
-        page = "&p=" + req.params.page
-    }
+  var page = "";
+  if (req.params.page) {
+    page = "&p=" + req.params.page
+  }
 
-    axios
-      .get("http://www.recipepuppy.com/api/?q=" + req.params.search + page)
-      .then(({ data: { results } }) => res.json(results))
-      .catch(err => res.status(404).json([]))
-      .catch(err => res.status(422).json(err));
-  });
+  axios
+    .get("http://www.recipepuppy.com/api/?q=" + req.params.search + page)
+    .then(({ data: { results } }) => res.json(results))
+    .catch(err => res.status(404).json([]))
+    .catch(err => res.status(422).json(err));
+});
 
 router.get("/recipes/random/", (req, res) => {
   const randomQuery = ["steak", "fish", "pork", "noodles"];
@@ -45,11 +46,11 @@ router.get("/recipes/random/", (req, res) => {
   axios
     .get("http://www.recipepuppy.com/api/?q=" + query + page)
     .then(({ data: { results } }) => (
-        res.json(results)
+      res.json(results)
     ))
     .catch(err => res.status(404).json([]))
     .catch(err => res.status(422).json(err))
-  });
+});
 
 
 module.exports = router;

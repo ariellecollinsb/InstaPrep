@@ -8,8 +8,13 @@ function MealItem(props) {
     <Card style={{ width: '20rem' }}>
       <CardHeader>{props.day}</CardHeader>
       <CardBody>
-        <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-        <Button>Button</Button>
+        <CardText className="text-left">
+          <ul>
+            {props.meals.map((item, i) => (
+              <li key={i}>{item.title}</li>
+            ))}
+          </ul>
+        </CardText>
       </CardBody>
     </Card>
   );

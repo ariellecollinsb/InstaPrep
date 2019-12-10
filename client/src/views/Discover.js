@@ -145,7 +145,7 @@ class DiscoverPage extends React.Component {
               {/*<Container>
                   <CardColumns> */}
               {!this.state.searchResults ? null : this.state.searchResults.map((item, i) => (
-                <Col className="ml-auto mr-auto text-center mb-4">
+                <Col key={"column_" + i} className="ml-auto mr-auto text-center mb-4">
                   <Card style={{ width: '20rem' }} key={i}>
                     <CardHeader>{item.title}</CardHeader>
                     <CardBody>
