@@ -1,6 +1,7 @@
 const axios = require("axios");
 const router = require("express").Router();
-const UserController = require("../../controllers/user.controller");
+const UserController = require("../controllers/user.controller");
+const BlogController = require("../controllers/blog.controller");
 //
 // Users
 //
@@ -53,5 +54,8 @@ router.get("/recipes/random/", (req, res) => {
     .catch(err => res.status(422).json(err))
 });
 
-
+// 
+// Blog
+//
+router.get("/blog/", BlogController.getBlogPosts);
 module.exports = router;

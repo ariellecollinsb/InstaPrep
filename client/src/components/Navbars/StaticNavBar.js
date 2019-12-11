@@ -58,16 +58,6 @@ function StaticNavBar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
-            <NavItem>
-              <NavLink className="nav-link" to="/discover">
-                Discover
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="nav-link" to="/meals">
-                Meals
-              </NavLink>
-            </NavItem>
             {!user.isAuthenticated() ?
               <>
                 <NavItem>
@@ -84,14 +74,29 @@ function StaticNavBar() {
               :
               <>
                 <NavItem>
+                  <NavLink className="nav-link" to="/discover">
+                    Discover
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="nav-link" to="/meals">
+                    Meals
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="nav-link" to="/shoppinglist">
+                    Shopping List
+                  </NavLink>
+                </NavItem>
+                <NavItem>
                   <NavLink className="nav-link" to="/profile">
                     Profile
-                </NavLink>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/logout">
                     Log Out
-                </NavLink>
+                  </NavLink>
                 </NavItem>
               </>
             }

@@ -68,16 +68,21 @@
     &.card-plain{
         background-color: transparent;
         box-shadow: none;
-        border-radius: 0;
-
-
+        border-radius: 0.25rem;
+        border: 1px solid #ddd;
+        color: #212529;
+        .card-header {
+            background-color: rgba(0, 0, 0, 0.03);
+            border-bottom-color: #eee;
+            font-weight: 500;
+        }
         .card-body{
             padding-left: 5px;
             padding-right: 5px;
         }
 
         img{
-            border-radius: $border-radius-extreme;
+            border-radius: 0;
         }
     }
 

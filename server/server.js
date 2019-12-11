@@ -29,16 +29,16 @@ app.use(cors({
   //origin: 'http://localhost:3000',
   origin: true,
   credentials: true
-})) 
+}))
 
 passportInit(app)
 
-app.use("/api", require("./routes/api/apiRoutes"));
+app.use("/api", require("./routes/apiRouter"));
 app.get('/wake-up', (req, res) => res.send('👍'))
 app.use('/auth', authRouter);
-app.get('/*', function(req, res){
-  res.sendFile(join(__dirname, '../client/build/index.html'), function(err) {
-    if(err) {
+app.get('/*', function (req, res) {
+  res.sendFile(join(__dirname, '../client/build/index.html'), function (err) {
+    if (err) {
       res.status(500).send(err);
     }
   })
@@ -46,7 +46,7 @@ app.get('/*', function(req, res){
 
 mongoose.connect(dbConfig, { useNewUrlParser: true });
 
-let server = app.listen(PORT, function() {
+let server = app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
 
@@ -56,5 +56,5 @@ var io = require('socket.io')(server);  //pass a http.Server instance
 //server.listen(80);
 app.set('io', io)
 io.set('origins', '*:*');
-io.on('connection', function(socket){})
+io.on('connection', function (socket) { })
 //connect();

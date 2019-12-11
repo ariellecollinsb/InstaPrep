@@ -146,13 +146,13 @@ class DiscoverPage extends React.Component {
                   <CardColumns> */}
               {!this.state.searchResults ? null : this.state.searchResults.map((item, i) => (
                 <Col key={"column_" + i} className="ml-auto mr-auto text-center mb-4">
-                  <Card style={{ width: '20rem' }} key={i}>
+                  <Card className="card-plain" style={{ width: '20rem' }} key={i}>
                     <CardHeader>{item.title}</CardHeader>
                     <CardBody>
                       <CardText>{item.ingredients}.</CardText>
                       <Button href={item.href} target={"_blank"}>View</Button>
                       {' '}
-                      <Button data-meal={JSON.stringify(item)} onClick={() => this.onAddMealClick(item)}>Add</Button>
+                      <Button className="btn-success" data-meal={JSON.stringify(item)} onClick={() => this.onAddMealClick(item)}>Add</Button>
                     </CardBody>
                   </Card>
                 </Col>

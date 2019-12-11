@@ -35,7 +35,7 @@ function AttributionsPage() {
             </Row>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
-                <Card>
+                <Card className="card-plain">
                   <CardHeader>Website Template</CardHeader>
                   <CardBody>
                     CreativeTim - <a target="_blank" rel="noopener noreferrer" href="http://www.creative-tim.com/product/paper-kit-react?ref=pkr-index-page">PaperKit React</a>
@@ -45,15 +45,15 @@ function AttributionsPage() {
             </Row>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
-                <Card>
+                <Card className="card-plain">
                   <CardHeader>Unsplash Images</CardHeader>
                   <CardBody>
                     <ListGroup flush>
-                      <ListGroupItem><a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/4_jhDO54BYg">Dan Gold</a></ListGroupItem>
-                      <ListGroupItem><a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/-YHSwy6uqvk">Lilly Banse</a></ListGroupItem>
-                      <ListGroupItem><a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/M4E7X3z80PQ">Brooke Lark</a></ListGroupItem>
-                      <ListGroupItem><a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/-r5KSMkyoSc">Peter Wendt</a></ListGroupItem>
-                      <ListGroupItem><a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/8xxW3z31k8A">David Fartek</a></ListGroupItem>
+                      <ListGroupItem tag="a" target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/4_jhDO54BYg" action>Dan Gold</ListGroupItem>
+                      <ListGroupItem tag="a" target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/-YHSwy6uqvk" action>Lilly Banse</ListGroupItem>
+                      <ListGroupItem tag="a" target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/M4E7X3z80PQ" action>Brooke Lark</ListGroupItem>
+                      <ListGroupItem tag="a" target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/-r5KSMkyoSc" action>Peter Wendt</ListGroupItem>
+                      <ListGroupItem tag="a" target="_blank" rel="noopener noreferrer" href="https://unsplash.com/photos/8xxW3z31k8A" action>David Fartek</ListGroupItem>
                     </ListGroup>
                   </CardBody>
                 </Card>

@@ -1,19 +1,18 @@
 import React from "react";
 import {
-  Card, CardBody, CardText, CardHeader,
-  Button
+  Card, CardBody, CardText, CardHeader, ListGroup, ListGroupItem, Button
 } from "reactstrap";
 function MealItem(props) {
   return (
-    <Card style={{ width: '20rem' }}>
+    <Card style={{ width: '20rem' }} className="card-plain">
       <CardHeader>{props.day}</CardHeader>
       <CardBody>
         <CardText className="text-left">
-          <ul>
+          <ListGroup flush>
             {props.meals.map((item, i) => (
-              <li key={i}>{item.title}</li>
+              <ListGroupItem key={i} tag="a" href={item.href} target="_blank" action>{item.title}</ListGroupItem>
             ))}
-          </ul>
+          </ListGroup>
         </CardText>
       </CardBody>
     </Card>

@@ -69,7 +69,7 @@ export default {
     });
   },
 
-  getBlogs: function (req, res) {
+  getBlog: function () {
     return axios.get(`${API_URL}/api/blog/`, {
       withCredentials: true
     });

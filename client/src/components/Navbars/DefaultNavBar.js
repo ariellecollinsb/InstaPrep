@@ -83,6 +83,11 @@ function DefaultNavBar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
+            <NavItem>
+              <NavLink className="nav-link" to="/blog">
+                Blog
+              </NavLink>
+            </NavItem>
             {!user.isAuthenticated() ?
               <>
                 <NavItem>
@@ -101,27 +106,27 @@ function DefaultNavBar() {
                 <NavItem>
                   <NavLink className="nav-link" to="/discover">
                     Discover
-              </NavLink>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/meals">
                     Meals
-              </NavLink>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/shoppinglist">
                     Shopping List
-                </NavLink>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/profile">
                     Profile
-                </NavLink>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink className="nav-link" to="/logout">
                     Log Out
-                </NavLink>
+                  </NavLink>
                 </NavItem>
               </>
             }
