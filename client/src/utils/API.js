@@ -23,13 +23,13 @@ export default {
   },
 
   getMeals: function (week) {
-    return axios.get(`${API_URL}/api/users/mealPlan/${moment(week).format("YYYY-MM-DD")}`, {
+    return axios.get(`${API_URL}/api/users/mealPlan/${moment(week).utc().format("YYYY-MM-DD")}`, {
       withCredentials: true
     });
   },
 
   getShoppingList: function (week) {
-    return axios.get(`${API_URL}/api/users/shoppingList/${moment(week).format("YYYY-MM-DD")}`, {
+    return axios.get(`${API_URL}/api/users/shoppingList/${moment(week).utc().format("YYYY-MM-DD")}`, {
       withCredentials: true
     });
   },

@@ -115,7 +115,7 @@ class DiscoverPage extends React.Component {
 
   render() {
     let weeks = [];
-    let current = moment().startOf("week");
+    let current = moment().utc().startOf("week");
     let end = current.clone().add(3, 'w');
     let index = 0;
     while (current <= end) {
