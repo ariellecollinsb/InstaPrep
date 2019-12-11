@@ -93,11 +93,9 @@ UserSchema.methods = {
     return [];
   },
   getShoppingList: function (week) {
-    console.log(week);
     var weekIndex = this.mealPlans.findIndex((v) => {
       return new Date(v.week).getTime() === week.getTime();
     });
-    console.log(weekIndex);
     if (weekIndex > -1) {
       let shoppingList = [];
       this.mealPlans[weekIndex].days.forEach(day => {
@@ -120,7 +118,7 @@ UserSchema.methods = {
     });
     if (weekIndex === -1) {
       // Add Week
-      this.mealPlans.$push({
+      this.mealPlans.push({
         week: week,
         days: [{
           day: day,
