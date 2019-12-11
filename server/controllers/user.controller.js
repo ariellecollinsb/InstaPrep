@@ -63,8 +63,9 @@ module.exports = {
       .catch(error => res.json({ status: "error" }));
   },
   getMeals: function (req, res) {
-
-    let week = moment(req.params.week).utc().toDate();
+    console.log("Week: ", req.params.week);
+    let week = moment(req.params.week + 'T00:00:00Z').toDate();
+    console.log(week);
     User.findById(req.session.passport.user._id)
       .then(user => {
         res.json(user.getMeals(week))
@@ -72,7 +73,7 @@ module.exports = {
       .catch(error => res.json({ status: "error", error: error }));
   },
   getShoppingList: function (req, res) {
-    let week = moment(req.params.week).utc().toDate();
+    let week = moment(req.params.week + 'T00:00:00Z').utc().toDate();
     User.findById(req.session.passport.user._id)
       .then(user => {
         res.json(user.getShoppingList(week))

@@ -88,7 +88,7 @@ UserSchema.methods = {
     var weekIndex = this.mealPlans.findIndex((v) => {
       console.log(new Date(v.week).getTime());
       console.log(week.getTime());
-      return new Date(v.week).getTime() === week.getTime();
+      return new Date(v.week).toUTCString() === week.toUTCString();
     });
     console.log(weekIndex);
     if (weekIndex > -1) {
