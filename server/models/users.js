@@ -86,8 +86,8 @@ UserSchema.methods = {
   getMeals: function (week) {
     //console.log("Getting Meals", week, this.mealPlans);
     var weekIndex = this.mealPlans.findIndex((v) => {
-      console.log(new Date(v.week).getTime());
-      console.log(week.getTime());
+      console.log(new Date(v.week).toUTCString());
+      console.log(week.toUTCString());
       return new Date(v.week).toUTCString() === week.toUTCString();
     });
     console.log(weekIndex);
@@ -118,7 +118,7 @@ UserSchema.methods = {
   },
   addMeal: function (week, day, meal) {
     var weekIndex = this.mealPlans.findIndex((v) => {
-      return new Date(v.week).getTime() === new Date(week).getTime();
+      return new Date(v.week).toUTCString() === new Date(week).toUTCString();
     });
     if (weekIndex === -1) {
       // Add Week
