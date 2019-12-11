@@ -84,8 +84,9 @@ UserSchema.methods = {
     return ~oAuthTypes.indexOf(this.provider);
   },
   getMeals: function (week) {
-    console.log("Getting Meals", week);
+    console.log("Getting Meals", week, this.mealPlans);
     var weekIndex = this.mealPlans.findIndex((v) => {
+      console.log(v);
       console.log(Date(v.week).getTime(), week.getTime());
       return new Date(v.week).getTime() === week.getTime();
     });
