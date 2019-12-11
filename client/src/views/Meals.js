@@ -44,6 +44,7 @@ class MealsPage extends React.Component {
     }
     API.getMeals(this.state.week)
       .then((meals) => {
+        console.log("Meals", meals);
         let days = [];
         if (meals.data.days && meals.data.days.length > 0) {
           days = meals.data.days;

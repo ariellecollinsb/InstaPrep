@@ -80,7 +80,7 @@ class ShoppingListPage extends React.Component {
             <Container>
               <div className="search">
                 <div className="search-input">
-                  <Input type="select" name="week" id="week" onChange={this.handleChangeInput}>
+                  <Input type="select" name="week" id="week" bsSize="lg" onChange={this.handleChangeInput}>
                     {weeks}
                   </Input>
                 </div>
