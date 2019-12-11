@@ -84,13 +84,9 @@ UserSchema.methods = {
     return ~oAuthTypes.indexOf(this.provider);
   },
   getMeals: function (week) {
-    //console.log("Getting Meals", week, this.mealPlans);
     var weekIndex = this.mealPlans.findIndex((v) => {
-      console.log("Database:", new Date(v.week));
-      console.log("Parameter:", week);
       return compareDate(new Date(v.week), week);
     });
-    console.log(weekIndex);
     if (weekIndex > -1) {
       return this.mealPlans[weekIndex];
     }
@@ -98,7 +94,7 @@ UserSchema.methods = {
   },
   getShoppingList: function (week) {
     var weekIndex = this.mealPlans.findIndex((v) => {
-      return new Date(v.week).getTime() === week.getTime();
+      return compareDate(new Date(v.week), week);
     });
     if (weekIndex > -1) {
       let shoppingList = [];
@@ -118,7 +114,7 @@ UserSchema.methods = {
   },
   addMeal: function (week, day, meal) {
     var weekIndex = this.mealPlans.findIndex((v) => {
-      return new Date(v.week).toUTCString() === new Date(week).toUTCString();
+      return compareDate(new Date(v.week), new Date(week));
     });
     if (weekIndex === -1) {
       // Add Week
