@@ -63,9 +63,7 @@ module.exports = {
       .catch(error => res.json({ status: "error" }));
   },
   getMeals: function (req, res) {
-    console.log("Week: ", req.params.week);
     let week = moment(req.params.week + 'T00:00:00Z').toDate();
-    console.log(week);
     User.findById(req.session.passport.user._id)
       .then(user => {
         res.json(user.getMeals(week))

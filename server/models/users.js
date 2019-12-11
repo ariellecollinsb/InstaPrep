@@ -86,9 +86,9 @@ UserSchema.methods = {
   getMeals: function (week) {
     //console.log("Getting Meals", week, this.mealPlans);
     var weekIndex = this.mealPlans.findIndex((v) => {
-      console.log(new Date(v.week).toUTCString());
-      console.log(week.toUTCString());
-      return new Date(v.week).toUTCString() === week.toUTCString();
+      console.log("Database:", new Date(v.week));
+      console.log("Parameter:", week);
+      return compareDate(new Date(v.week), week);
     });
     console.log(weekIndex);
     if (weekIndex > -1) {
@@ -150,6 +150,12 @@ UserSchema.methods = {
     return this.save();
   }
 }
+
+const compareDate = (date1, date2) => {
+  return date1.getUTCFullYear() === date2.getUTCFullYear() &&
+    date1.getUTCMonth() === date2.getUTCMonth() &&
+    date1.getUTCDate() === date2.getUTCDate()
+};
 
 const User = mongoose.model("User", UserSchema);
 
